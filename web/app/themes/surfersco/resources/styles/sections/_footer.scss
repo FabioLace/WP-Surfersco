@@ -1,0 +1,27 @@
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: #2b2b2b;
+    color: white;
+    margin-top: 5em;
+    font: large 'Montserrat', sans-serif;
+    
+    .grid{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 1em;
+        margin: 0 auto;
+        padding: 2em 0;
+
+        a{
+            display: inline-block;
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (min-width: 727px){
+    footer .grid{
+        column-gap: 10em;
+    }
+}
