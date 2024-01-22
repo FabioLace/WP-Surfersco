@@ -1,0 +1,29 @@
+.hero{
+    @include flex-col;
+    font-family: italic 'Playfair Display', serif;
+    text-align: center;
+
+    .slogan{
+        font-size: 20px;
+        color: #000000
+    }
+
+    .subtitle{
+        font-size: 1rem;
+        color: #ffffff;
+    }
+}
+
+
+@media screen and (min-width: 768px){
+    .hero{
+
+        .slogan{
+            font-size: 3rem;
+        }
+
+        .subtitle{
+            font-size: 1.5rem;
+        }
+    }
+}

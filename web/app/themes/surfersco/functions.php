@@ -78,4 +78,17 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'global-styles' );
 }, 20 );
 
+//REMOVE EDITOR WYSIWYG
+function remove_pages_editor(){
+    $front_page_id = get_option('page_on_front');
+    $current_page_id = get_the_ID();
+
+    if($current_page_id == $front_page_id) {
+        remove_post_type_support( 'page', 'editor' );
+    }
+}
+add_action( 'add_meta_boxes', 'remove_pages_editor' );
+
+
+
 
