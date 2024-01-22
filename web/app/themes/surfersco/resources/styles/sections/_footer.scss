@@ -2,7 +2,6 @@ footer{
     display: flex;
     justify-content: center;
     background-color: #2b2b2b;
-    color: white;
     margin-top: 5em;
     font: large 'Montserrat', sans-serif;
     
@@ -16,6 +15,7 @@ footer{
         a{
             display: inline-block;
             text-decoration: none;
+            color: white;
         }
     }
 }
