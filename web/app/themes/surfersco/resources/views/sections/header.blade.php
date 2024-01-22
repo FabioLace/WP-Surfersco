@@ -1,6 +1,6 @@
 <header>
     <a class="title" href="{{ home_url('/') }}">
-        <h1>{!! $siteName !!}</h1>
+        {!! $siteName !!}
     </a>
 
     @if (has_nav_menu('header'))
