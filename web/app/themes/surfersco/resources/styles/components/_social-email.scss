@@ -1,0 +1,127 @@
+.social-email {
+    margin-top: 5em;  
+
+    .container{
+        @include flex-col;
+
+        .social{
+            
+            .background-title{
+                font: {
+                    family: 'Montserrat';
+                    size: 65px;
+                    weight: 700;
+                }
+                margin-bottom: -24px;
+                text-transform: uppercase;
+                color: #fafafa;
+            }
+
+            .instagram-card{
+                width: 350px;
+                margin: 0 auto;
+
+                img{ width: 350px; }
+
+                .follow-us{
+                    .follow-container{
+                        @include flex-row;
+                        align-items: center;
+                        margin: 0 auto;
+
+                        div,i,a{
+                            margin: 10px;
+                        }
+
+                        div,i{
+                            color: $main-color;
+                            font-size:x-large;
+                            user-select: none;
+                        }
+    
+                        div{
+                            text-transform: uppercase;
+                        }
+
+                        a{
+                            text-decoration: none;
+
+                            &:link,&:visited{
+                                color: grey
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-us{
+            margin: 0 auto;
+            padding: 2em;
+            font-size: larger;
+        }
+
+        .email-form{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 767px){
+    .social-email {
+        margin-top: 20em;
+
+        .social{
+            .instagram-card{
+                .follow-us{
+                    @include flex-row;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1023px){
+    .social-email {
+        margin-top: 15em;
+
+        .container{
+            flex-direction: row;
+
+            .social{
+                margin-right: 5em;
+
+                .background-title{
+                    font-size: 5em;
+                    margin-bottom: -30px;
+                }
+
+                .instagram-card{
+                    width: 480px;
+
+                    img{
+                        width: 480px;
+                    }
+                }
+            }
+            .contact-us{ display: none;}
+            
+            .email-form{
+                display: block;
+                width: 70%;
+
+                .form{
+                    @include flex-col;
+                    width: 400px;
+
+                    .grid{
+                        display: grid;
+                        grid-template-columns: 50% 48%;
+                        column-gap: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}
