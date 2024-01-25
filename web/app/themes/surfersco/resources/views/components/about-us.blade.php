@@ -1,21 +1,46 @@
-<section class="about-us">
-    <h1 class="mx-auto">About us</h1>
-    <div class="about-us-container">
-        <div class="about">
-            <img class="surfer" src="../../images/surfer.jpg" alt="surfer" />
-            <div class="text">
-                <div class="h2-text">
-                    <h2> {{-- TITLE --}}</h2>
-                    <i class="mdi-close mx-auto" />
-                    <div>
-                        {{-- TEXT --}}
+@php
+    $about = get_field('about_us_home');
+    if(!isset($title)){
+        $title = $about['titolo_about_us'];
+    }
+
+    if(!isset($text)){
+        $text = $about['testo_about_us'];
+    }
+
+    if(!isset($link)){
+        $link = $about['link_about_us'];
+    }
+@endphp
+
+@if(!empty($title) || !empty($text))
+    <section class="about-us">
+        <div class="container">
+            <div class="background-title">About us</div>
+            <div class="about">
+                <div class="surfer" style="background: url(@asset('images/surfer.jpg'))" alt="surfer"></div>
+                <div class="text">
+                    <div class="h2-text">
+                        @if(!empty($title))
+                            <div> {{ $title }}</div>
+                            <i class="mdi-close mx-auto" />
+                        @endif
+                        @if(!empty($text))
+                            <div>{{ $text }}</div>
+                        @endif
+                        @if(!empty($link))
+                            <a href="{{ $link['url']}}">{{ $link['title'] }}</a>
+                        @endif
                     </div>
-                    <a href="#">Read more</a>
                 </div>
+                @if($about['mostra_video_about_us'])
+                    <video src="" class="about-video" autoplay loop muted />
+                @endif
             </div>
-            {{-- IF !empty($video) --}}
-                <video src="{{ $video }}" class="about-video" autoplay loop muted />
-            {{-- END IF --}}
         </div>
-    </div>
-</section>
+    </section>
+@endif
+
+@php
+    unset($about,$title, $text, $link);
+@endphp

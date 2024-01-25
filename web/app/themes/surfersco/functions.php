@@ -89,6 +89,21 @@ function remove_pages_editor(){
 }
 add_action( 'add_meta_boxes', 'remove_pages_editor' );
 
+function mute_jquery_migrator() {   
+    echo '<script>jQuery.migrateMute = true;</script>';
+}
+add_action( 'wp_head', 'mute_jquery_migrator' );
+add_action( 'admin_head', 'mute_jquery_migrator' );
+
+//
+function my_acf_json_save_point( $path ) {
+    // update path
+    $path = get_stylesheet_directory() . '/resources/acf-json';
+
+    // return
+    return $path;
+}
+add_filter('acf/settings/save_json', __NAMESPACE__ . '\\my_acf_json_save_point');
 
 
 

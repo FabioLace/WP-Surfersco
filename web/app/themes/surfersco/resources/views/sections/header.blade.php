@@ -12,5 +12,6 @@
                 <a href="{{ $menuItem->url }}"> {{ $menuItem->post_title }}</a>
             @endforeach
         </nav>
+        <div class="socials"></div>
     @endif
 </header>

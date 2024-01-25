@@ -1,6 +1,7 @@
 .hero{
     @include flex-col;
-    font-family: italic 'Playfair Display', serif;
+    font-family: 'Playfair Display',serif;
+    font-style: italic;
     text-align: center;
 
     .slogan{

@@ -17,8 +17,12 @@
                 <div class="slogan">{{ $slogan }}</div>
             @endif
             @if(!empty($subtitle))
-                <div class="subtitle"></div>
+                <div class="subtitle">{{ $subtitle }}</div>
             @endif
         </div>
     </section>
 @endif
+
+@php
+    unset($hero,$slogan,$subtitle);
+@endphp

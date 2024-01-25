@@ -1,13 +1,14 @@
 @import 'bootstrap/scss/bootstrap';
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 @import "./utils/mixins";
 @import "./utils/variables";
+@import "./utils/classes";
 @import "./sections/header";
 @import "./sections/footer";
 
 @import "./components/hero";
+@import "./components/about-us";
 
 body{
     background-image: url("../images/wave.jpg");
