@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('components.hero')
-    @include('components.about-us')
+    @include('components.fixed.hero')
+    @include('components.fixed.about-us')
 @endsection
