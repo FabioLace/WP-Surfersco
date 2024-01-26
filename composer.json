@@ -58,7 +58,8 @@
     "roots/wp-password-bcrypt": "1.1.0",
     "wpackagist-theme/twentytwentyfour": "^1.0",
     "roots/acorn": "^3.3",
-    "advanced-custom-fields/advanced-custom-fields-pro": "^6.2"
+    "advanced-custom-fields/advanced-custom-fields-pro": "^6.2",
+    "wpackagist-plugin/woocommerce": "^8.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",

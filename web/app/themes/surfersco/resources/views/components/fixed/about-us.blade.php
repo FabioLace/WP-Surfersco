@@ -23,7 +23,7 @@
                     <div class="h2-text">
                         @if(!empty($title))
                             <div> {{ $title }}</div>
-                            <i class="mdi-close mx-auto" />
+                            <i class="mdi mdi-close mx-auto"></i>
                         @endif
                         @if(!empty($text))
                             <div>{{ $text }}</div>

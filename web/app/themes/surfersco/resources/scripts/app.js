@@ -1,6 +1,8 @@
 import domReady from '@roots/sage/client/dom-ready';
 import $ from 'jquery';
 import 'bootstrap';
+import '@mdi/font/css/materialdesignicons.css'
+import '@fortawesome/fontawesome-free';
 //import Cookies from 'js-cookie';
 import Swiper from 'swiper';
 import 'jssocials';
