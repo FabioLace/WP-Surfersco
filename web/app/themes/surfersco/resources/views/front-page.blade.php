@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('components.fixed.hero')
+    @include('components.hero')
     @include('components.product-card')
-    @include('components.fixed.about-us')
+    @include('components.about-us')
+    {{-- @include('components.social-email') --}}
 @endsection

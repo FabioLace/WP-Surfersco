@@ -44,6 +44,22 @@
             "ffraenz/private-composer-installer": "^5.0"
           }
         }
+    },
+    {
+        "type": "package",
+        "package": {
+            "name": "gravityforms/gravityforms",
+            "version": "2.7.19",
+            "type": "wordpress-plugin",
+            "dist": {
+                "type": "zip",
+                "url": "https://www.gravityhelp.com/wp-content/plugins/gravitymanager/api.php?op=get_plugin&slug=gravityforms&key={%GF_KEY}"
+            },
+            "require": {
+                "composer/installers": "^2.0",
+                "gotoandplay/gravityforms-composer-installer": "^2.3"
+            }
+        }
     }
   ],
   "require": {
@@ -59,7 +75,9 @@
     "wpackagist-theme/twentytwentyfour": "^1.0",
     "roots/acorn": "^3.3",
     "advanced-custom-fields/advanced-custom-fields-pro": "^6.2",
-    "wpackagist-plugin/woocommerce": "^8.3"
+    "wpackagist-plugin/woocommerce": "^8.3",
+    "gravityforms/gravityforms":"^2.7.0",
+    "wpackagist-plugin/acf-gravityforms-add-on": "^1.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
@@ -71,7 +89,8 @@
     "allow-plugins": {
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
-      "ffraenz/private-composer-installer": true
+      "ffraenz/private-composer-installer": true,
+      "gotoandplay/gravityforms-composer-installer": true
     }
   },
   "minimum-stability": "dev",
