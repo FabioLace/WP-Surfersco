@@ -14,18 +14,22 @@
     .about{
         @include flex-col;
         height: 500px;
-        margin-bottom: 5em;
+        //margin-bottom: 5em;
         color: #000000;
+        align-items: center;
+        justify-content: center;
 
         .content{
             background-color: #ffffff;
             height: 60%; 
-            margin-top: 8em;
+            //margin-top: 8em;
             text-align: center;
             
             .title-text{
                 @include flex-col;
                 text-align: center;
+                align-items: center;
+                //justify-content: center;
                 padding: 1em;
                 margin: 0 auto;
 
@@ -45,12 +49,12 @@
             }
         }
 
-        .about-video{
+        /* .about-video{
             display: flex;
             margin: 1em auto;
             height: 30%;
             box-shadow: 0px 0px 13px 0px #000000bf;
-        }
+        } */
     }
 }
 
@@ -69,7 +73,7 @@
 
             .content{
                 height: 60%;
-                margin-top: 15em;
+                //margin-top: 15em;
                 padding: 3em;
             }
 
@@ -92,14 +96,12 @@
 
             .content{
                 width: 50%;
-                height: 60%;
+                //height: 60%;
                 margin-top: auto;
+                margin-right: auto;
                 padding: 4em;
 
                 .title-text{
-                    margin-left: 1em;
-                    margin-right: 1em;
-
                     a{
                         font-family: "Montserrat", sans-serif;
                         text-decoration: none;

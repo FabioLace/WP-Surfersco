@@ -12,6 +12,16 @@
                 <a href="{{ $menuItem->url }}"> {{ $menuItem->post_title }}</a>
             @endforeach
         </nav>
-        <div class="socials"></div>
+        <div class="socials">
+            <a href="#">
+                <i class="mdi mdi-facebook"></i>
+            </a>
+            <a href="#">
+                <i class="mdi mdi-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="mdi mdi-email"></i>
+            </a>
+        </div>
     @endif
 </header>

@@ -5,12 +5,29 @@ import '@mdi/font/css/materialdesignicons.css'
 import '@fortawesome/fontawesome-free';
 //import Cookies from 'js-cookie';
 import Swiper from 'swiper';
-import 'jssocials';
+//import 'jssocials';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
+
+    let header = document.querySelector('header');
+
+    function handleScroll() {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.body.clientHeight;
+        const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+        if (scrollPercentage > 1 && !header.classList.contains('scrolled')) {
+            header.classList.add('scrolled');
+        } else if(scrollPercentage === 0  && header.classList.contains('scrolled')){
+            header.classList.remove('scrolled');
+        }
+    }
+    handleScroll();
+    window.addEventListener('scroll',handleScroll);
+
     let hasVisited = document.cookie.includes('cookieName=Visited'); //let hasVisited = Cookies.get('Visited');
     
     if(!hasVisited) { // if(hasVisited == undefined)
@@ -26,11 +43,11 @@ domReady(async () => {
         console.log("DEFINED");
     }
 
-    $("header .socials").jsSocials({ //FIX
+    /* $("header .socials").jsSocials({ //FIX
         shares: ['facebook', 'email'],
         showLabel: false,
         showCount: false,
-    })
+    }) */
 });
 
 /**

@@ -3,6 +3,8 @@
     font-family: 'Playfair Display',serif;
     font-style: italic;
     text-align: center;
+    margin-top: 45px;
+    margin-bottom: 100px;
 
     .slogan{
         font-size: 20px;
@@ -15,9 +17,9 @@
     }
 }
 
-
 @media screen and (min-width: 768px){
     .hero{
+        margin: 150px 0;
 
         .slogan{
             font-size: 3rem;
