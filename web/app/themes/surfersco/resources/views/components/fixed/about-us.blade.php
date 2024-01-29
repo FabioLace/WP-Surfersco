@@ -15,27 +15,28 @@
 
 @if(!empty($title) || !empty($text))
     <section class="about-us">
-        <div class="container">
-            <div class="background-title">About us</div>
-            <div class="about">
-                <div class="surfer" style="background: url(@asset('images/surfer.jpg'))" alt="surfer"></div>
-                <div class="text">
-                    <div class="h2-text">
-                        @if(!empty($title))
-                            <div> {{ $title }}</div>
-                            <i class="mdi mdi-close mx-auto"></i>
-                        @endif
-                        @if(!empty($text))
-                            <div>{{ $text }}</div>
-                        @endif
-                        @if(!empty($link))
-                            <a href="{{ $link['url']}}">{{ $link['title'] }}</a>
-                        @endif
+        <div class="background-title">About us</div>
+        <div class="wrapper-with-background">
+            <div class="container">
+                <div class="about">
+                    <div class="content">
+                        <div class="title-text">
+                            @if(!empty($title))
+                                <div class="title"> {{ $title }}</div>
+                                <i class="mdi mdi-close mx-auto"></i>
+                            @endif
+                            @if(!empty($text))
+                                <div class="text">{{ $text }}</div>
+                            @endif
+                            @if(!empty($link))
+                                <a href="{{ $link['url']}}">{{ $link['title'] }}</a>
+                            @endif
+                        </div>
                     </div>
+                    @if($about['mostra_video_about_us'])
+                        <video src="" class="about-video" autoplay loop muted />
+                    @endif
                 </div>
-                @if($about['mostra_video_about_us'])
-                    <video src="" class="about-video" autoplay loop muted />
-                @endif
             </div>
         </div>
     </section>

@@ -10,9 +10,8 @@
 
 @endphp
 
-<section class="container product-card">
+<section class="product-card">
     <div class="col product-images">
-        <img src="@asset('images/corner.png')" class="corner">
         <img src="{{ $image_url }}" class="product-image">
         @if(!empty($galleryImagesIds))
             <div class="thumbnails my-auto">
@@ -49,7 +48,6 @@
 
                 <script type="text/javascript">
                     function showTabText(tabId) {
-                        console.log(tabId);
                         document.querySelectorAll('.text.tab-content').forEach(function(content) {
                             if(content.style.display == 'block'){
                                 content.style.display = 'none';
@@ -72,8 +70,8 @@
             @endif
         </div>
         <div class="price-cta">
-            <div class="price"> {{ $product->get_price() }} </div>
-            <button>Buy Product</button>
+            <div class="price"> {!! wc_price($product->get_price()) !!} </div>
+            <button class="cta">Buy Product</button>
         </div>
     </div>
 </section>

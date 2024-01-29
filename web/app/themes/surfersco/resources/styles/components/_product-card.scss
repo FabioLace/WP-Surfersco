@@ -1,21 +1,17 @@
 .product-card {
     @include flex-col;
-    //background-color: white;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif!important;
     width: 100%;
     background-color: white;
     box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.4);
+    border-radius: 4px;
+    position: relative;
 
     .product-images{
         @include flex-col;
-
-        .corner{
-            height: 50%;
-            position: absolute;
-            left: 0;
-            //z-index: -1;
-        }
+        background-image: url("../../images/corner.png");
+        background-repeat: no-repeat;
+        background-size: contain;
 
         .product-image{
             height: 300px;
@@ -44,6 +40,7 @@
         .prod-name-reviews{
             .prod-name{
                 font-size: smaller;
+                color: black;
             }
 
             /* .reviews{
@@ -74,6 +71,7 @@
                 margin-bottom: 10px;
                 border-bottom: 1px solid #dddddd;
                 list-style-type: none;
+                padding-left: 0;
 
                 #main-tab{
                     display: block;
@@ -104,22 +102,31 @@
 
         .price-cta{
             @include flex-row;
-            font-weight: 700;
             align-items: center;
 
             .price{
+                color: black;
                 font-size: small;
                 margin-right: auto;
             }
 
             button{
-                background-color: #00d2ff;
+                max-height: 36px;
+                font-size: 14px;
+                background-color: rgb(0, 210, 255);
                 border: none;
                 border-radius: 4px;
-                font-weight: bold;
                 color: white;
-                padding: 16px;
+                padding: 8px;
                 text-transform: uppercase;
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                transition: .3s;
+
+                @media (hover: hover) {
+                    &:hover {
+                        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+                    }
+                }
             }
         }
     }
@@ -134,10 +141,6 @@
 
         .product-images{
             flex-direction: row;
-
-            .corner{
-                height: 50%;
-            }
 
             .thumbnails{
                 @include flex-col;
@@ -172,6 +175,8 @@
 
 @media screen and (min-width: 1023px){
     .product-card {
+        width: 90%;
+        max-width: 1080px;
         margin-left: auto;
         margin-right: auto;
 
@@ -195,6 +200,7 @@
 
         .product-data{
             margin: 4em;
+            position: relative;
 
             .prod-name-reviews{
                 .prod-name{
@@ -247,10 +253,9 @@
                 }
             }
 
-            .price-cta-button{
+            .price-cta{
                 position: absolute;
-                bottom: 4em;
-                font-weight: 700;
+                bottom: 0;
 
                 .price{
                     font-size: larger;
