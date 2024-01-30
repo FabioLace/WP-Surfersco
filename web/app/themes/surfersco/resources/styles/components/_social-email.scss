@@ -5,7 +5,7 @@
         width: fit-content;
 
         .instagram-card{
-            box-shadow: $cardShadow;
+            box-shadow: $card-shadow;
             width: fit-content;
 
             img{ width: 100%; }
@@ -72,19 +72,7 @@
             }
 
             .email-form{
-                //display: block;
-                /*width: 70%;
-
-                 .form{
-                    @include flex-col;
-                    width: 400px;
-
-                    .grid{
-                        display: grid;
-                        grid-template-columns: 50% 48%;
-                        column-gap: 0.5em;
-                    }
-                }*/
+                display: block
             }
         }
     }

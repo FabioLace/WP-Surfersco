@@ -1,16 +1,27 @@
-.social-email{
-    .email-form{
-        .gform_wrapper{
-            width: 100%;
+.gform_wrapper{
+    width: 100%;
 
-            .gform_heading{
-                display: none;
-            }
+    .gform_heading{
+        display: none;
+    }
 
-            form .gform_body{
-                .gform_fields{
-                    
+    form {
+        .gform_body{
+            .gform_fields{
+                input, textarea{
+                    border: none;
+                    border-radius: 4px;
+                    box-shadow: $mini-shadow;
+    
+                    &::placeholder{
+                        opacity: .5;
+                    }
                 }
+            }
+        }
+        .gform_footer{
+            input.button{
+                @include standard-button;
             }
         }
     }

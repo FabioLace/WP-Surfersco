@@ -4,7 +4,7 @@
     width: 100%;
     padding: 0;
     background-color: white;
-    box-shadow: $cardShadow;
+    box-shadow: $card-shadow;
     border-radius: 4px;
     position: relative;
     margin-bottom: 100px;
@@ -113,22 +113,7 @@
             }
 
             button{
-                max-height: 36px;
-                font-size: 14px;
-                background-color: rgb(0, 210, 255);
-                border: none;
-                border-radius: 4px;
-                color: white;
-                padding: 8px;
-                text-transform: uppercase;
-                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-                transition: .3s;
-
-                @media (hover: hover) {
-                    &:hover {
-                        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-                    }
-                }
+                @include standard-button;
             }
         }
     }
