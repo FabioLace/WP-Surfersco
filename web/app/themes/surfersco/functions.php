@@ -102,5 +102,16 @@ function my_acf_json_save_point( $path ) {
 }
 add_filter('acf/settings/save_json', __NAMESPACE__ . '\\my_acf_json_save_point');
 
+//FAVICONS
+/* add_action('wp_head',function(){
+    $faviconDirectory = get_template_directory_uri() . 'resources/images/favicon';
+    echo "<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"".$faviconDirectory."/favicon-32x32.png\">";
+    echo "<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"".$faviconDirectory."/favicon-16x16.png\">";
+    echo "<link rel=\"manifest\" href=\"".$faviconDirectory."/site.webmanifest\">";
+    echo "<link rel=\"mask-icon\" href=\"".$faviconDirectory."/safari-pinned-tab.svg\" color=\"#9d9d9c\">";
+    echo "<meta name=\"msapplication-TileColor\" content=\"#9d9d9c\">";
+    echo "<meta name=\"theme-color\" content=\"#ffffff\">";
+}); */
+
 
 

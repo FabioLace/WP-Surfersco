@@ -10,7 +10,7 @@
 
 @endphp
 
-<section class="product-card">
+<section class="container product-card">
     <div class="col product-images">
         <img src="{{ $image_url }}" class="product-image">
         @if(!empty($galleryImagesIds))

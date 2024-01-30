@@ -4,5 +4,5 @@
     @include('components.hero')
     @include('components.product-card')
     @include('components.about-us')
-    {{-- @include('components.social-email') --}}
+    @include('components.social-email')
 @endsection

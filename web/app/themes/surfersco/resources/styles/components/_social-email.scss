@@ -1,76 +1,53 @@
 .social-email {
-    margin-top: 5em;  
+    .social{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
 
-    .container{
-        @include flex-col;
+        .instagram-card{
+            box-shadow: $cardShadow;
+            width: fit-content;
 
-        .social{
-            
-            .background-title{
-                font: {
-                    family: 'Montserrat';
-                    size: 65px;
-                    weight: 700;
-                }
-                margin-bottom: -24px;
-                text-transform: uppercase;
-                color: #fafafa;
-            }
+            img{ width: 100%; }
 
-            .instagram-card{
-                width: 350px;
+            .follow-us{
+                @include flex-row;
+                align-items: center;
                 margin: 0 auto;
 
-                img{ width: 350px; }
+                div,i,a{
+                    margin: 10px;
+                }
 
-                .follow-us{
-                    .follow-container{
-                        @include flex-row;
-                        align-items: center;
-                        margin: 0 auto;
+                div,i{
+                    color: $main-color;
+                    font-size:x-large;
+                    user-select: none;
+                }
 
-                        div,i,a{
-                            margin: 10px;
-                        }
+                div{
+                    text-transform: uppercase;
+                }
 
-                        div,i{
-                            color: $main-color;
-                            font-size:x-large;
-                            user-select: none;
-                        }
-    
-                        div{
-                            text-transform: uppercase;
-                        }
+                a{
+                    text-decoration: none;
 
-                        a{
-                            text-decoration: none;
-
-                            &:link,&:visited{
-                                color: grey
-                            }
-                        }
+                    &:link, &:visited{
+                        color: grey
                     }
                 }
             }
         }
+    }
 
-        .contact-us{
-            margin: 0 auto;
-            padding: 2em;
-            font-size: larger;
-        }
-
-        .email-form{
-            display: none;
-        }
+    .email-form{
+        display: none;
     }
 }
 
+
 @media screen and (min-width: 767px){
     .social-email {
-        margin-top: 20em;
-
         .social{
             .instagram-card{
                 .follow-us{
@@ -84,34 +61,21 @@
 
 @media screen and (min-width: 1023px){
     .social-email {
-        margin-top: 15em;
-
         .container{
-            flex-direction: row;
-
+            @include flex-row;
+ 
             .social{
-                margin-right: 5em;
-
                 .background-title{
-                    font-size: 5em;
-                    margin-bottom: -30px;
-                }
-
-                .instagram-card{
-                    width: 480px;
-
-                    img{
-                        width: 480px;
-                    }
+                    font-size: 4em;
+                    margin-bottom: -6px;
                 }
             }
-            .contact-us{ display: none;}
-            
-            .email-form{
-                display: block;
-                width: 70%;
 
-                .form{
+            .email-form{
+                //display: block;
+                /*width: 70%;
+
+                 .form{
                     @include flex-col;
                     width: 400px;
 
@@ -120,7 +84,7 @@
                         grid-template-columns: 50% 48%;
                         column-gap: 0.5em;
                     }
-                }
+                }*/
             }
         }
     }

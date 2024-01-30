@@ -6,4 +6,15 @@
     text-transform: uppercase;
     color: #fafafa;
     user-select: none;
+
+    @media screen and (min-width: 767px) {
+        line-height: 1;
+        width: fit-content;
+        height: fit-content;
+        font-size: 5em;
+    }
+
+    @media screen and (min-width: 1024px) {
+        font-size: 10.25em;
+    }
 }
