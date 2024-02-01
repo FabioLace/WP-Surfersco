@@ -2,11 +2,26 @@
     @if (has_nav_menu('footer'))
         @php
             $menuItems = wp_get_nav_menu_items('footer');
+            $totalItems = count($menuItems);
+            $halfItems = ceil($totalItems / 2);
         @endphp
-        <div class="grid">
-            @foreach($menuItems as $menuItem)
-                <a href="{{ $menuItem->url }}"> {{ $menuItem->post_title }}</a>
-            @endforeach
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    @foreach($menuItems as $index => $menuItem)
+                        @if($index < $halfItems)
+                            <a href="{{ $menuItem->url }}">{{ $menuItem->post_title }}</a>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="col">
+                    @foreach($menuItems as $index => $menuItem)
+                        @if($index >= $halfItems)
+                            <a href="{{ $menuItem->url }}">{{ $menuItem->post_title }}</a>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
         </div>
     @endif
 </footer>

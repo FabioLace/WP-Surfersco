@@ -1,14 +1,15 @@
-.social-email {
+.social-email{
     .social{
         display: flex;
         flex-direction: column;
-        width: fit-content;
 
         .instagram-card{
             box-shadow: $card-shadow;
             width: fit-content;
 
-            img{ width: 100%; }
+            img{
+                width: 100%;
+            }
 
             .follow-us{
                 @include flex-row;
@@ -72,7 +73,8 @@
             }
 
             .email-form{
-                display: block
+                display: flex;
+                justify-content: center;
             }
         }
     }

@@ -9,22 +9,21 @@
 }
 
 @mixin standard-button{
-    //ADD IMPORTANT TO ALL
-    max-height: 36px;
     font-size: 14px;
-    background-color: $main-color;
-    border: none;
-    border-radius: 4px;
     color: white;
     padding: 8px;
-    text-transform: uppercase;
-    box-shadow: $mini-shadow;
-    transition: .3s;
+    max-height: 36px !important;
+    background-color: $main-color !important;
+    border: none !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+    box-shadow: $mini-shadow !important;
+    transition: .3s !important;
 
     @media (hover: hover) {
         &:hover {
-            background: $light-main-color;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            background: $light-main-color!important;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)!important;
         }
     }
 }
