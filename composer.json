@@ -77,7 +77,8 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "^6.2",
     "wpackagist-plugin/woocommerce": "^8.3",
     "gravityforms/gravityforms":"^2.7.0",
-    "wpackagist-plugin/acf-gravityforms-add-on": "^1.2"
+    "wpackagist-plugin/acf-gravityforms-add-on": "^1.2",
+    "wpackagist-plugin/wordpress-seo": "^21.9"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
