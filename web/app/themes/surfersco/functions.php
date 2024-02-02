@@ -102,6 +102,41 @@ function my_acf_json_save_point( $path ) {
 }
 add_filter('acf/settings/save_json', __NAMESPACE__ . '\\my_acf_json_save_point');
 
+//CUSTOMIZE LOGIN PAGE
+add_filter( 'login_headerurl', function(){
+    return home_url();
+});
+
+add_filter( 'login_headertext', function(){
+    return 'Surfers Co.';
+});
+
+add_action( 'login_enqueue_scripts', function(){
+
+    $pathToBackgroundImage = get_template_directory_uri() . '/resources/images/wave.jpg';
+    echo '
+    <style type="text/css">
+        .login {
+            background-image: url("'. $pathToBackgroundImage . '");
+            background-color: #ffff;
+            background-repeat: no-repeat;
+            font-family: \'Montserrat\', sans-serif!important;
+        }
+        body{
+            background: #ffff;
+        }
+        #login h1 a, .login h1 a {
+            display: contents;
+            color: black;
+            background: none;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .login #nav a, .login #backtoblog a{
+            color: black!important;
+        }
+    </style>';
+});
 //FAVICONS
 /* add_action('wp_head',function(){
     $faviconDirectory = get_template_directory_uri() . 'resources/images/favicon';
