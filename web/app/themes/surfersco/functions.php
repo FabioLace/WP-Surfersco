@@ -64,11 +64,28 @@ collect(['setup', 'filters'])
         }
     });
 
-//REGISTER NAV MENU
+/*
+|--------------------------------------------------------------------------
+| Register Navigation Menus
+|--------------------------------------------------------------------------
+|
+| Register Header and Footer menus
+|
+*/
+
 register_nav_menu('header','Header');
 register_nav_menu('footer','Footer');
 
-// DISABLE GUTENBERG
+/*
+|--------------------------------------------------------------------------
+| Remove Gutenberg
+|--------------------------------------------------------------------------
+|
+| I don't use Gutenberg because it has some limitation while using plugins
+| like Advanced Custom Fields. More control is better than less control.
+|
+*/
+
 add_filter( 'use_block_editor_for_post', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );
 
@@ -78,7 +95,15 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'global-styles' );
 }, 20 );
 
-//REMOVE EDITOR WYSIWYG
+/*
+|-------------------------------------------------------------------------
+| Remove WYSIWYG editor
+|--------------------------------------------------------------------------
+| 
+| I don't need the WYSIWYG everywhere
+|
+*/
+
 function remove_pages_editor(){
     $front_page_id = get_option('page_on_front');
     $current_page_id = get_the_ID();
@@ -89,20 +114,52 @@ function remove_pages_editor(){
 }
 add_action( 'add_meta_boxes', 'remove_pages_editor' );
 
+/*
+|--------------------------------------------------------------------------
+| Mute JQuery migrator
+|--------------------------------------------------------------------------
+| 
+| Mutes jQuery migrator console log
+|
+*/
+
 function mute_jquery_migrator() {   
     echo '<script>jQuery.migrateMute = true;</script>';
 }
 add_action( 'wp_head', 'mute_jquery_migrator' );
 add_action( 'admin_head', 'mute_jquery_migrator' );
 
-//ACF SAVE POINTS
+/*
+|--------------------------------------------------------------------------
+| ACF save and load points
+|--------------------------------------------------------------------------
+|
+| As the title says
+|
+*/
+
 function my_acf_json_save_point( $path ) {
     $path = get_stylesheet_directory() . '/resources/acf-json';
     return $path;
 }
 add_filter('acf/settings/save_json', __NAMESPACE__ . '\\my_acf_json_save_point');
 
-//CUSTOMIZE LOGIN PAGE
+function my_acf_json_load_point( $paths ) {
+    unset($paths[0]);
+    $paths[] = get_stylesheet_directory() . '/resources/acf-json';
+    return $paths;
+}
+add_filter('acf/settings/load_json', __NAMESPACE__ . '\\my_acf_json_load_point');
+
+/*
+|--------------------------------------------------------------------------
+| Customize Login Page
+|--------------------------------------------------------------------------
+|
+| As the title says, it customizes the default WP login page
+|
+*/
+
 add_filter( 'login_headerurl', function(){
     return home_url();
 });
@@ -112,7 +169,6 @@ add_filter( 'login_headertext', function(){
 });
 
 add_action( 'login_enqueue_scripts', function(){
-
     $pathToBackgroundImage = get_template_directory_uri() . '/resources/images/wave.jpg';
     echo '
     <style type="text/css">
@@ -137,6 +193,7 @@ add_action( 'login_enqueue_scripts', function(){
         }
     </style>';
 });
+
 //FAVICONS
 /* add_action('wp_head',function(){
     $faviconDirectory = get_template_directory_uri() . 'resources/images/favicon';
