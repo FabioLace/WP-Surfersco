@@ -26,3 +26,7 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+composer.lock
+web/app/themes/surfersco/package-lock.json
+web/app/themes/surfersco/*.lock
