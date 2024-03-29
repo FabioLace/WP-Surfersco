@@ -1,6 +1,5 @@
 footer{
-    display: flex;
-    justify-content: center;
+    @include flex-justify-center;
     background-color: #2b2b2b;
     margin-top: 100px;
     padding-top: 50px;
@@ -8,8 +7,7 @@ footer{
     font: large 'Montserrat', sans-serif;
 
     .col{
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
 
         a{
             display: inline-block;

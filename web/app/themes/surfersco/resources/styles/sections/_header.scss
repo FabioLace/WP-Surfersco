@@ -20,14 +20,10 @@ header{
         font-weight: 700;
         color: #000000;
 
-        &:visited{
-            color: #000000;
-        }
+        &:visited{ color: #000000; }
     }
 
-    .links, .socials{
-        display: none;
-    }
+    .links, .socials{ display: none; }
 }
 
 @media screen and (min-width: 768px) {
@@ -35,10 +31,7 @@ header{
         align-items: center;
         padding: 30px 50px;
 
-        .title{
-            margin: unset;
-            //font-size: smaller;
-        }
+        .title{ margin: unset; }
 
         .links{
             @include flex-row;
@@ -67,13 +60,9 @@ header{
 
 @media screen and (min-width: 1023px){
     header {
-        .title{
-            font-size: 2em;
-        }
+        .title{ font-size: 2em; }
 
-        .links{
-            margin-right: auto;
-        }
+        .links{ margin-right: auto; }
 
         .socials{
             @include flex-row;
@@ -83,9 +72,7 @@ header{
                 color: black!important;
                 text-decoration: none;
 
-                i{
-                    font-size: 30px;
-                }
+                i{ font-size: 30px; }
             }
         }
     }

@@ -1,12 +1,19 @@
 @php
-    $hero = get_field('hero_section_home');
+    $active_plugins = get_option('active_plugins');
 
-    if(!isset($slogan)){
-        $slogan = $hero['slogan_hero'];
-    }
+    if(in_array('advanced-custom-fields-pro/acf.php', $active_plugins)){
+        $hero = get_field('hero_section_home');
 
-    if(!isset($subtitle)){
-        $subtitle = $hero['subtitle_hero'];
+        if(!isset($slogan)){
+            $slogan = $hero['slogan_hero'];
+        }
+
+        if(!isset($subtitle)){
+            $subtitle = $hero['subtitle_hero'];
+        }
+    } else {
+        $slogan = "Ride your wave as if it's your last";
+        $subtitle = "We are Surfers Co."
     }
 @endphp
 

@@ -1,89 +1,59 @@
-.social-email{
-    .social{
-        display: flex;
-        flex-direction: column;
+.social-email .social{
+    @include flex-column;
 
-        .background-title{
-            font-size: 45px;
-        }
+    .background-title{ font-size: 45px; }
 
-        .instagram-card{
-            box-shadow: $card-shadow;
-            width: fit-content;
+    .instagram-card{
+        box-shadow: $card-shadow;
+        width: fit-content;
 
-            img{
-                width: 100%;
+        img{ width: 100%; }
+
+        .follow-us{
+            @include flex-row;
+            align-items: center;
+            margin: 0 auto;
+
+            div,i,a{ margin: 10px; }
+
+            div,i{
+                color: $main-color;
+                font-size:x-large;
+                user-select: none;
             }
 
-            .follow-us{
-                @include flex-row;
-                align-items: center;
-                margin: 0 auto;
+            div{ text-transform: uppercase; }
 
-                div,i,a{
-                    margin: 10px;
-                }
+            a{
+                text-decoration: none;
 
-                div,i{
-                    color: $main-color;
-                    font-size:x-large;
-                    user-select: none;
-                }
-
-                div{
-                    text-transform: uppercase;
-                }
-
-                a{
-                    text-decoration: none;
-
-                    &:link, &:visited{
-                        color: grey
-                    }
-                }
+                &:link, &:visited{ color: grey }
             }
         }
-    }
-
-    .email-form{
-        display: none;
     }
 }
 
+.form-wrapper{ display: none; }
 
 @media screen and (min-width: 767px){
-    .social-email {
-        .social{
+    .social-email .social {
+        .background-title{ font-size: 5em; }
 
-            .background-title{
-                font-size: 5em;
-            }
-
-            .instagram-card{
-                .follow-us{
-                    @include flex-row;
-                    align-items: center;
-                }
-            }
+        .instagram-card .follow-us{
+            @include flex-row;
+            align-items: center;
         }
     }
 }
 
 @media screen and (min-width: 1023px){
-    .social-email {
-        .container{
-            @include flex-row;
- 
-            .social{
-                .background-title{
-                    font-size: 4em;
-                }
-            }
+    .social-email .container{
+        @include flex-row;
 
-            .email-form{
-                display: flex;
-                justify-content: center;
-            }
+        .social .background-title{ font-size: 4em; }
+
+        .form-wrapper{
+            display: block;
         }
     }
 }

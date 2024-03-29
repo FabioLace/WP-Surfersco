@@ -1,0 +1,65 @@
+.form-wrapper{
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+
+    .custom-form{
+        padding: 50px 50px 0;
+
+        input, textarea{
+            border: none;
+            border-radius: 4px;
+            box-shadow: $mini-shadow;
+            padding: 10px;
+
+            &:focus-visible{ outline-color: $main-color; }
+
+            &::placeholder{ opacity: .5; }
+        }
+
+        input{
+            &[type="checkbox"]{
+                width: 20px;
+                height: 20px;
+
+                &:checked{
+                    background-color: $light-main-color;
+
+                    &::before{ color: white; }
+                }
+            }
+
+            &[type="email"]{ width: 100%; }
+
+            &[type="date"]{
+                &:-webkit-datetime-edit-text,
+                &::-webkit-datetime-edit-month-field,
+                &::-webkit-datetime-edit-day-field,
+                &::-webkit-datetime-edit-year-field {
+                    opacity: .5!important;
+                }
+            }
+        }
+
+        label{
+            margin-left: 1rem;
+            color: black;
+        }
+
+        .checkbox-label{
+            @include flex-align-center;
+            flex-direction: row;
+        }
+
+        textarea, .checkbox-label{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .button-submit{ @include standard-button; }
+
+        .row{
+            margin: 0px unset 1rem; 
+            gap: 5px;
+        }
+    }
+}

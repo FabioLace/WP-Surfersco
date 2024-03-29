@@ -1,11 +1,36 @@
+@mixin mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
 @mixin flex-row{
     display: flex;
     flex-direction: row;
 }
 
-@mixin flex-col{
+@mixin flex-align-center{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex-justify-center{
+    display: flex;
+    justify-content: center;
+}
+
+@mixin justify-align-center{
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-align-justify-center{
+    display: flex;
+    @include justify-align-center;
 }
 
 @mixin standard-button{
@@ -23,7 +48,7 @@
     @media (hover: hover) {
         &:hover {
             background: $light-main-color!important;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)!important;
+            box-shadow: 0px 0px 10px 0px $light-main-color!important;
         }
     }
 }

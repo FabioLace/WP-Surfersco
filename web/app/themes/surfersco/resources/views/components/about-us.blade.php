@@ -1,15 +1,27 @@
 @php
-    $about = get_field('about_us_home');
-    if(!isset($title)){
-        $title = $about['titolo_about_us'];
-    }
+    $active_plugins = get_option('active_plugins');
 
-    if(!isset($text)){
-        $text = $about['testo_about_us'];
-    }
+    if(in_array('advanced-custom-fields-pro/acf.php', $active_plugins)){
+        $about = get_field('about_us_home');
 
-    if(!isset($link)){
-        $link = $about['link_about_us'];
+        if(!isset($title)){
+            $title = $about['titolo_about_us'];
+        }
+    
+        if(!isset($text)){
+            $text = $about['testo_about_us'];
+        }
+    
+        if(!isset($link)){
+            $link = $about['link_about_us'];
+        }
+    } else {
+        $title = "About us";
+        $text = "We are Surfers Co."
+        $link = {
+            'url' : '#',
+            'title' : 'Shop'
+        };
     }
 @endphp
 

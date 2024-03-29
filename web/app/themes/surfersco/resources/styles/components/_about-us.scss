@@ -1,5 +1,5 @@
 .about-us{
-    @include flex-col;
+    @include flex-column;
     position: relative;
     margin-bottom: 100px;
 
@@ -10,11 +10,10 @@
     }
 
     .about{
-        @include flex-col;
+        @include flex-align-justify-center;
+        flex-direction: column;
         height: 500px;
         color: #000000;
-        align-items: center;
-        justify-content: center;
 
         .content{
             background-color: #ffffff;
@@ -22,10 +21,9 @@
             text-align: center;
 
             .title-text{
-                @include flex-col;
+                @include flex-align-justify-center;
+                flex-direction: column;
                 text-align: center;
-                align-items: center;
-                justify-content: center;
 
                 .title{
                     font-family: 'Montserrat';

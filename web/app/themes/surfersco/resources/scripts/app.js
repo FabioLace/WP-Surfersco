@@ -4,7 +4,7 @@ import 'bootstrap';
 import '@mdi/font/css/materialdesignicons.css'
 import '@fortawesome/fontawesome-free';
 //import Cookies from 'js-cookie';
-import Swiper from 'swiper';
+//import Swiper from 'swiper';
 //import 'jssocials';
 
 /**
@@ -28,26 +28,20 @@ domReady(async () => {
     handleScroll();
     window.addEventListener('scroll',handleScroll);
 
-    let hasVisited = document.cookie.includes('cookieName=Visited'); //let hasVisited = Cookies.get('Visited');
-    
-    if(!hasVisited) { // if(hasVisited == undefined)
+    /* let hasVisited = document.cookie.includes('cookieName=Visited');
+
+    if(!hasVisited) {
         console.log("UNDEFINED");
         $('#cookie-modal').modal('show');
         $("#cookie-modal .btn-primary").on('click', function(){
             console.log("Setting cookie")
             let expireDate = new Date();
             expireDate.setDate(expireDate.getDate() + 1);
-            document.cookie = "cookieName=Visited; expires=" + expireDate +"; path=/"; //Cookies.set("cookieName", "visited");
+            document.cookie = "cookieName=Visited; expires=" + expireDate +"; path=/";
         });
     } else {
         console.log("DEFINED");
-    }
-
-    /* $("header .socials").jsSocials({ //FIX
-        shares: ['facebook', 'email'],
-        showLabel: false,
-        showCount: false,
-    }) */
+    } */
 });
 
 /**

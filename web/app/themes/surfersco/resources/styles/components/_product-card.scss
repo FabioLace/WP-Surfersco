@@ -1,5 +1,5 @@
 .product-card {
-    @include flex-col;
+    @include flex-column;
     font-family: 'Montserrat', sans-serif!important;
     width: 100%;
     padding: 0;
@@ -10,16 +10,15 @@
     margin-bottom: 100px;
 
     .product-images{
-        @include flex-col;
+        @include flex-align-justify-center;
+        flex-direction: column;
         background-image: url("../../images/corner.png");
         background-repeat: no-repeat;
         background-size: contain;
         justify-content: center;
         align-items: center;
 
-        .product-image{
-            height: 300px;
-        }
+        .product-image{ height: 300px; }
 
         .thumbnails{
             display: none;
@@ -29,15 +28,13 @@
                 border: 1px solid #808080;
                 margin: 2px 0;
 
-                &:hover{
-                    border: 2px solid $light-main-color;
-                }
+                &:hover{ border: 2px solid $light-main-color; }
             }
         }
     }
 
     .product-data{
-        @include flex-col;
+        @include flex-column;
         margin: 20px;
 
         .prod-name-reviews{
@@ -78,6 +75,7 @@
 
                 #main-tab{
                     display: block;
+
                     a{
                         text-decoration: none;
                         color: #808080;
@@ -112,9 +110,7 @@
                 margin-right: auto;
             }
 
-            button{
-                @include standard-button;
-            }
+            button{ @include standard-button; }
         }
     }
 }
@@ -128,12 +124,10 @@
             flex-direction: row;
             gap: 50px;
 
-            .product-image{
-                height: 200px;
-            }
+            .product-image{ height: 200px; }
 
             .thumbnails{
-                @include flex-col;
+                @include flex-column;
 
                 img{
                     width: 50px;
@@ -146,19 +140,14 @@
         .product-data{
             padding: 20px;
 
-            .prod-description{
-                .text{
-                    margin-top: 1em;
-                }
+            .prod-description .text{
+                margin-top: 1em;
             }
-
         }
 
-        .price-cta{
-            .price{
-                font-size: large;
-                margin-right: 25px;
-            }
+        .price-cta .price{
+            font-size: large;
+            margin-right: 25px;
         }
     }
 }
@@ -169,17 +158,13 @@
         .product-images{
             gap: 50px;
 
-            .product-image{
-                height: 70%;
-            }
+            .product-image{ height: 70%; }
 
             .thumbnails{
                 img{
                     width: 70px;
 
-                    &:hover{
-                        border: 2px solid $light-main-color;
-                    }
+                    &:hover{ border: 2px solid $light-main-color; }
                 }
             }
         }
@@ -192,9 +177,7 @@
             position: relative;
 
             .prod-name-reviews{
-                .prod-name{
-                    font-size: large;
-                }
+                .prod-name{ font-size: large; }
 
                 /* .prod-reviews{
                     @include flex-row;
@@ -237,9 +220,7 @@
                     }
                 }
 
-                .text{
-                    font-size: medium;
-                }
+                .text{ font-size: medium; }
             }
 
             .price-cta{
