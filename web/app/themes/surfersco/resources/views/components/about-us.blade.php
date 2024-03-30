@@ -7,16 +7,17 @@
         if(!isset($title)){
             $title = $about['titolo_about_us'];
         }
-    
+
         if(!isset($text)){
             $text = $about['testo_about_us'];
         }
-    
+
         if(!isset($link)){
             $link = $about['link_about_us'];
         }
 
         $showVideo = $about['mostra_video_about_us'];
+
     } else {
         $title = "We are Surfers co.";
         $text =
@@ -27,7 +28,7 @@
             'url' => '#',
             'title' => 'Read more'
         ];
-        $showVideo = true;
+        $showVideo = false;
     }
 @endphp
 

@@ -19,11 +19,20 @@
             &[type="checkbox"]{
                 width: 20px;
                 height: 20px;
+                appearance: none;
+                position: relative;
 
                 &:checked{
-                    background-color: $light-main-color;
+                    background-color: $main-color;
 
-                    &::before{ color: white; }
+                    &::after{
+                        content: '\2714';
+                        font-size: 1rem;
+                        position: absolute;
+                        top: 0;
+                        left: 5px;
+                        color: #ffffff;
+                    }
                 }
             }
 
@@ -41,7 +50,7 @@
 
         label{
             margin-left: 1rem;
-            color: black;
+            color: #000000;
         }
 
         .checkbox-label{

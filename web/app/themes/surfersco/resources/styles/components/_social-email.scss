@@ -8,6 +8,7 @@
 
         .background-title{
             font-size: 45px;
+            margin-bottom: -10px;
             @include media-breakpoint-up(md){ font-size: 5em; }
             @include media-breakpoint-up(lg){ font-size: 4em; }
         }
