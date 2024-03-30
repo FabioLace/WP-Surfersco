@@ -1,59 +1,49 @@
-.social-email .social{
-    @include flex-column;
+.social-email{
+    .container{
+        @include media-breakpoint-up(lg){ @include flex-row; }
+    }
 
-    .background-title{ font-size: 45px; }
+    .social{
+        @include flex-column;
 
-    .instagram-card{
-        box-shadow: $card-shadow;
-        width: fit-content;
+        .background-title{
+            font-size: 45px;
+            @include media-breakpoint-up(md){ font-size: 5em; }
+            @include media-breakpoint-up(lg){ font-size: 4em; }
+        }
 
-        img{ width: 100%; }
+        .instagram-card{
+            box-shadow: $card-shadow;
+            width: fit-content;
 
-        .follow-us{
-            @include flex-row;
-            align-items: center;
-            margin: 0 auto;
+            img{ width: 100%; }
 
-            div,i,a{ margin: 10px; }
+            .follow-us{
+                @include flex-row;
+                align-items: center;
+                margin: 0 auto;
 
-            div,i{
-                color: $main-color;
-                font-size:x-large;
-                user-select: none;
-            }
+                div,i,a{ margin: 10px; }
 
-            div{ text-transform: uppercase; }
+                div,i{
+                    color: $main-color;
+                    font-size:x-large;
+                    user-select: none;
+                }
 
-            a{
-                text-decoration: none;
+                div{ text-transform: uppercase; }
 
-                &:link, &:visited{ color: grey }
+                a{
+                    text-decoration: none;
+
+                    &:link, &:visited{ color: grey }
+                }
             }
         }
     }
 }
 
-.form-wrapper{ display: none; }
-
-@media screen and (min-width: 767px){
-    .social-email .social {
-        .background-title{ font-size: 5em; }
-
-        .instagram-card .follow-us{
-            @include flex-row;
-            align-items: center;
-        }
-    }
-}
-
-@media screen and (min-width: 1023px){
-    .social-email .container{
-        @include flex-row;
-
-        .social .background-title{ font-size: 4em; }
-
-        .form-wrapper{
-            display: block;
-        }
-    }
+.form-wrapper{
+    display: none;
+    @include media-breakpoint-up(lg){ display: block; }
 }

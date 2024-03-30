@@ -14,11 +14,17 @@
         flex-direction: column;
         height: 500px;
         color: #000000;
+        @include media-breakpoint-up(md){ width: 100%; }
 
         .content{
             background-color: #ffffff;
             padding: 3em;
             text-align: center;
+            @include media-breakpoint-up(lg){
+                width: 50%;
+                margin-top: auto;
+                margin-right: auto;
+            }
 
             .title-text{
                 @include flex-align-justify-center;
@@ -26,71 +32,25 @@
                 text-align: center;
 
                 .title{
-                    font-family: 'Montserrat';
+                    //font-family: 'Montserrat';
                     text-transform: uppercase;
                 }
 
-                .text{
-                    font: italic large "Playfair Display", serif;
-                }
+                .text{ font: italic large "Playfair Display", serif; }
 
                 a{
-                    font-family: "Montserrat", sans-serif;
+                    //font-family: "Montserrat", sans-serif;
                     text-decoration: none;
                 }
             }
         }
 
-        /* .about-video{
+        .about-video{
             display: flex;
             margin: 1em auto;
             height: 30%;
             box-shadow: 0px 0px 13px 0px #000000bf;
-        } */
-    }
-}
-
-@media screen and (min-width: 767px) {
-    .about-us{
-        .about{
-            width: 100%;
-            height: 500px;
-
-            .content{
-                padding: 3em;
-            }
-
-            .about-video{
-                height: 55%;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 1023px) {
-    .about-us{
-        .about{
-            margin-bottom: 5em;
-            @include flex-row;
-
-            .content{
-                width: 50%;
-                margin-top: auto;
-                margin-right: auto;
-
-                .title-text{
-                    a{
-                        font-family: "Montserrat", sans-serif;
-                        text-decoration: none;
-                    }
-                }
-            }
- 
-            /* .about-video{
-                display: flex;
-                margin-left: auto;
-                height: 55%;
-            } */
+            @include media-breakpoint-up(md){ height: 55%; }
         }
     }
 }

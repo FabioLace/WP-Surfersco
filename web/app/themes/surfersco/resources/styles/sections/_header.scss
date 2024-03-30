@@ -2,12 +2,16 @@ header{
     @include flex-row;
     padding: 25px;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    //font-family: 'Montserrat', sans-serif;
     width: 100%;
     transition: .2s;
     position: sticky;
     z-index: 999;
     top: 0;
+    @include media-breakpoint-up(md){
+        align-items: center;
+        padding: 30px 50px;
+    }
 
     &.scrolled{
         background-color: white;
@@ -19,61 +23,49 @@ header{
         margin: 0 auto;
         font-weight: 700;
         color: #000000;
+        @include media-breakpoint-up(md){ margin: unset; }
+        @include media-breakpoint-up(lg){ font-size: 2em; }
 
         &:visited{ color: #000000; }
     }
 
     .links, .socials{ display: none; }
-}
+    
+    .links{
+        margin-left: auto;
+        @include media-breakpoint-up(md){ @include flex-row; }
+        @include media-breakpoint-up(lg){ margin-right: auto; }
 
-@media screen and (min-width: 768px) {
-    header{
-        align-items: center;
-        padding: 30px 50px;
+        a{
+            padding: 5px;
+            font-size: smaller;
+            margin-left: 5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000000;
+            font-weight: bold;
+            transition-duration: 0.3s;
 
-        .title{ margin: unset; }
-
-        .links{
-            @include flex-row;
-            margin-left: auto;
-
-            a{
-                padding: 5px;
-                font-size: smaller;
-                margin-left: 5px;
-                text-decoration: none;
-                text-transform: uppercase;
-                color: #000000;
-                font-weight: bold;
-                transition-duration: 0.3s;
-
-                @media (hover: hover){
-                    &:hover{
-                        color: #ffffff;
-                        background-color: $main-color;
-                    }
+            @media (hover: hover){
+                &:hover{
+                    color: #ffffff;
+                    background-color: $main-color;
                 }
             }
         }
+
     }
-}
 
-@media screen and (min-width: 1023px){
-    header {
-        .title{ font-size: 2em; }
+    .socials{
+        @include media-breakpoint-up(lg){ @include flex-row }
 
-        .links{ margin-right: auto; }
+        a{
+            margin: 0 5px;
+            color: #000000!important;
+            text-decoration: none;
 
-        .socials{
-            @include flex-row;
-
-            a{
-                margin: 0 5px;
-                color: black!important;
-                text-decoration: none;
-
-                i{ font-size: 30px; }
-            }
+            i{ font-size: 30px; }
         }
+
     }
 }

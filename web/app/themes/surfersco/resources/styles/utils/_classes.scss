@@ -2,21 +2,20 @@
     margin-bottom: -20px;
     font-weight: 700;
     font-size:  3em;
-    font-family:  'Montserrat', sans-serif;
+    //font-family:  'Montserrat', sans-serif;
     text-transform: uppercase;
     color: #efefef;
     //color: #fafafa;
     user-select: none;
-
-    @media screen and (min-width: 767px) {
-        line-height: 1;
+    @include media-breakpoint-up(md){
         width: fit-content;
         height: fit-content;
         margin-bottom: -10px;
+        line-height: 1;
         font-size: 5em;
     }
 
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg){
         font-size: 10.25em;
         margin-bottom: -21px;
     }

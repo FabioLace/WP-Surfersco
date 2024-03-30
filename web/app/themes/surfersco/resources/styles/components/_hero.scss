@@ -5,24 +5,17 @@
     text-align: center;
     margin-top: 45px;
     margin-bottom: 100px;
+    @include media-breakpoint-up(md){ margin: 150px 0; }
 
     .slogan{
         font-size: 20px;
-        color: #000000
+        color: #000000;
+        @include media-breakpoint-up(md){ font-size: 3rem; }
     }
 
     .subtitle{
         font-size: 1rem;
         color: #ffffff;
-    }
-}
-
-@media screen and (min-width: 768px){
-    .hero{
-        margin: 150px 0;
-
-        .slogan{ font-size: 3rem; }
-
-        .subtitle{ font-size: 1.5rem; }
+        @include media-breakpoint-up(md){ font-size: 1.5rem; }
     }
 }
