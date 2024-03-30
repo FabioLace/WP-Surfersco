@@ -2,7 +2,6 @@ header{
     @include flex-row;
     padding: 25px;
     text-align: center;
-    //font-family: 'Montserrat', sans-serif;
     width: 100%;
     transition: .2s;
     position: sticky;
@@ -30,7 +29,7 @@ header{
     }
 
     .links, .socials{ display: none; }
-    
+
     .links{
         margin-left: auto;
         @include media-breakpoint-up(md){ @include flex-row; }
@@ -53,7 +52,6 @@ header{
                 }
             }
         }
-
     }
 
     .socials{
@@ -66,6 +64,5 @@ header{
 
             i{ font-size: 30px; }
         }
-
     }
 }

@@ -33,7 +33,7 @@
     @include justify-align-center;
 }
 
-@mixin standard-button{
+@mixin button-standard{
     font-size: 14px;
     color: white;
     padding: 8px;
@@ -48,7 +48,7 @@
     @media (hover: hover) {
         &:hover {
             background: $light-main-color!important;
-            box-shadow: 0px 0px 10px 0px $light-main-color!important;
+            //box-shadow: 0px 0px 10px 0px $light-main-color!important;
         }
     }
 }

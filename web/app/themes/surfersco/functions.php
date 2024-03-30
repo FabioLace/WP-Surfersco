@@ -172,25 +172,21 @@ add_action( 'login_enqueue_scripts', function(){
     $pathToBackgroundImage = get_template_directory_uri() . '/resources/images/wave.jpg';
     echo '
     <style type="text/css">
-        .login {
+        .login{
             background-image: url("'. $pathToBackgroundImage . '");
             background-color: #ffff;
             background-repeat: no-repeat;
             font-family: \'Montserrat\', sans-serif!important;
         }
-        body{
-            background: #ffff;
-        }
-        #login h1 a, .login h1 a {
+        body{ background: #ffff; }
+        #login h1 a, .login h1 a{
             display: contents;
             color: black;
             background: none;
             font-size: 32px;
             font-weight: 700;
         }
-        .login #nav a, .login #backtoblog a{
-            color: black!important;
-        }
+        .login #nav a, .login #backtoblog a{ color: black!important; }
     </style>';
 });
 

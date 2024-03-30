@@ -1,6 +1,5 @@
 .product-card {
     @include flex-column;
-    font-family: 'Montserrat', sans-serif!important;
     width: 100%;
     padding: 0;
     background-color: white;
@@ -90,24 +89,17 @@
                 list-style-type: none;
                 padding-left: 0;
 
-                #main-tab{
-                    display: block;
-
-                    a{
-                        text-decoration: none;
-                        color: #808080;
-                    }
-                }
+                #main-tab{ display: block; }
 
                 li{
                     display: none;
                     cursor: pointer;
                     @include media-breakpoint-up(lg){ display: block; }
+                }
 
-                    a{
-                        text-decoration: none;
-                        color: #808080;
-                    }
+                #main-tab a, li a{
+                    text-decoration: none;
+                    color: #808080;
                 }
 
                 .active {
@@ -150,7 +142,7 @@
                 }
             }
 
-            button{ @include standard-button; }
+            button{ @include button-standard; }
         }
     }
 }

@@ -1,6 +1,5 @@
 .gform_wrapper{
     width: 90%;
-    //font-family: 'Montserrat', sans-serif;
 
     .gform_heading{ display: none; }
 
@@ -38,6 +37,6 @@
             }
         }
 
-        .gform_footer input.button{  @include standard-button; }
+        .gform_footer input.button{  @include button-standard; }
     }
 }

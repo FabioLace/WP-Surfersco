@@ -1,6 +1,5 @@
 .form-wrapper{
     width: 100%;
-    //font-family: 'Montserrat', sans-serif;
 
     .custom-form{
         padding: 50px 50px 0;
@@ -30,14 +29,14 @@
 
             &[type="email"]{ width: 100%; }
 
-            &[type="date"]{
+            /* &[type="date"]{
                 &:-webkit-datetime-edit-text,
                 &::-webkit-datetime-edit-month-field,
                 &::-webkit-datetime-edit-day-field,
                 &::-webkit-datetime-edit-year-field {
                     opacity: .5!important;
                 }
-            }
+            } */
         }
 
         label{
@@ -55,7 +54,7 @@
             margin-bottom: 1rem;
         }
 
-        .button-submit{ @include standard-button; }
+        .button-submit{ @include button-standard; }
 
         .row{
             margin: 0px unset 1rem; 
