@@ -19,14 +19,15 @@
         $showVideo = $about['mostra_video_about_us'];
     } else {
         $title = "We are Surfers co.";
-        $text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        $text =
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.";
         $link = [
             'url' => '#',
             'title' => 'Read more'
         ];
-        $showVideo = false;
+        $showVideo = true;
     }
 @endphp
 
@@ -51,7 +52,9 @@
                         </div>
                     </div>
                     @if($showVideo)
-                        <video src="" class="about-video" autoplay loop muted />
+                        <div class="container about-video">
+                            <video src="@asset('videos/surfers.webm')" autoplay loop muted />
+                        </div>
                     @endif
                 </div>
             </div>

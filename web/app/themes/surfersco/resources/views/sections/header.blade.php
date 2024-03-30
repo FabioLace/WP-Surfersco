@@ -10,16 +10,17 @@
                     <a href="{{ $menuItem->url }}"> {{ $menuItem->post_title }}</a>
                 @endforeach
             </nav>
-        @else
-            <nav class="nav-primary links" aria-label="header">
-                <a href="#">Boards</a>
-                <a href="#">Accessories</a>
-                <a href="#">Blog</a>
-                <a href="#">Technology</a>
-                <a href="#">Team</a>
-                <a href="#">Dealers</a>
-            </nav>
         @endif
+    @else
+        {{-- DEFAULT --}}
+        <nav class="nav-primary links" aria-label="header">
+            <a href="#">Boards</a>
+            <a href="#">Accessories</a>
+            <a href="#">Blog</a>
+            <a href="#">Technology</a>
+            <a href="#">Team</a>
+            <a href="#">Dealers</a>
+        </nav>
     @endif
     <div class="socials">
         <a href="#"><i class="mdi mdi-facebook"></i></a>
