@@ -1,3 +1,1 @@
-<div {{ $attributes->merge(['class' => $type]) }}>
-  {!! $message ?? $slot !!}
-</div>
+<div {{ $attributes->merge(['class' => $type]) }}>{!! $message ?? $slot !!}</div>

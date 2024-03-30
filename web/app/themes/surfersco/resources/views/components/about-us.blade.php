@@ -15,13 +15,18 @@
         if(!isset($link)){
             $link = $about['link_about_us'];
         }
+
+        $showVideo = $about['mostra_video_about_us'];
     } else {
-        $title = "About us";
-        $text = "We are Surfers Co."
-        $link = {
-            'url' : '#',
-            'title' : 'Shop'
-        };
+        $title = "We are Surfers co.";
+        $text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.";
+        $link = [
+            'url' => '#',
+            'title' => 'Read more'
+        ];
+        $showVideo = false;
     }
 @endphp
 
@@ -34,7 +39,7 @@
                     <div class="content">
                         <div class="title-text">
                             @if(!empty($title))
-                                <div class="title"> {{ $title }}</div>
+                                <div class="title">{{ $title }}</div>
                                 <i class="mdi mdi-close mx-auto"></i>
                             @endif
                             @if(!empty($text))
@@ -45,7 +50,7 @@
                             @endif
                         </div>
                     </div>
-                    @if($about['mostra_video_about_us'])
+                    @if($showVideo)
                         <video src="" class="about-video" autoplay loop muted />
                     @endif
                 </div>
@@ -53,7 +58,3 @@
         </div>
     </section>
 @endif
-
-@php
-    unset($about,$title, $text, $link);
-@endphp

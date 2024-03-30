@@ -12,8 +12,8 @@
             $subtitle = $hero['subtitle_hero'];
         }
     } else {
-        $slogan = "Ride your wave as if it's your last";
-        $subtitle = "We are Surfers Co."
+        $slogan = "Ride every wave as it's your last";
+        $subtitle = "We love the motion of the ocean";
     }
 @endphp
 
