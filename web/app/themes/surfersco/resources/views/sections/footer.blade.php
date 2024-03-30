@@ -1,12 +1,12 @@
 <footer>
-    @if (has_nav_menu('footer'))
-        @php
-            $menuItems = wp_get_nav_menu_items('footer');
-            $totalItems = count($menuItems);
-            $halfItems = ceil($totalItems / 2);
-        @endphp
-        <div class="container">
-            <div class="row">
+    <div class="container">
+        <div class="row">
+            @if(has_nav_menu('footer'))
+                @php
+                    $menuItems = wp_get_nav_menu_items('footer');
+                    $totalItems = count($menuItems);
+                    $halfItems = ceil($totalItems / 2);
+                @endphp
                 <div class="col">
                     @foreach($menuItems as $index => $menuItem)
                         @if($index < $halfItems)
@@ -21,12 +21,27 @@
                         @endif
                     @endforeach
                 </div>
-            </div>
+            @else
+                {{-- DEFAULT --}}
+                <div class="col">
+                    <a href="#">About</a>
+                    <a href="#">Boards</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="col">
+                    <a href="#">Technology</a>
+                    <a href="#">Team</a>
+                    <a href="#">Dealers</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            @endif
         </div>
-    @endif
+    </div>
 </footer>
 
-<div class="modal fade" id="cookie-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+{{-- <div class="modal fade" id="cookie-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -42,4 +57,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
