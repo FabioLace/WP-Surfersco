@@ -1,3 +1,10 @@
+.title{
+    font-weight: 700;
+    color: #000000;
+    font-size: 30px;
+    @include media-breakpoint-up(md)
+}
+
 .background-title{
     margin-bottom: -20px;
     font-weight: 700;

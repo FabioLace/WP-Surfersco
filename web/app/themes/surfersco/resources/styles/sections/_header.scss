@@ -20,10 +20,11 @@ header{
     .title{
         text-decoration: none;
         margin: 0 auto;
-        font-weight: 700;
-        color: #000000;
-        @include media-breakpoint-up(md){ margin: unset; }
-        @include media-breakpoint-up(lg){ font-size: 2em; }
+        @include media-breakpoint-up(md){
+            margin: unset;
+            font-size: 25px;
+        }
+        @include media-breakpoint-up(lg){ font-size: 30px; }
 
         &:visited{ color: #000000; }
     }
@@ -37,13 +38,14 @@ header{
 
         a{
             padding: 5px;
-            font-size: smaller;
+            font-size: 13px;
             margin-left: 5px;
             text-decoration: none;
             text-transform: uppercase;
             color: #000000;
             font-weight: bold;
             transition-duration: 0.3s;
+            @include media-breakpoint-up(lg){ font-size: 16px ;}
 
             @media (hover: hover){
                 &:hover{

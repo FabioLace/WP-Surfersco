@@ -2,7 +2,7 @@
     $active_plugins = get_option('active_plugins');
 
     if(in_array('woocommerce/woocommerce.php', $active_plugins) && in_array('advanced-custom-fields-pro/acf.php', $active_plugins)){
-        $customProduct = false;
+        $defaultProduct = false;
         $args = array(
             'status' => 'publish',
             'type' => 'simple',
@@ -28,14 +28,47 @@
             $tabs = get_field('tabs_info_product', $product->get_id());
         }
     } else {
-        $customProduct = true;
+        //DEFAULT
+        $defaultProduct = true;
         $productName = "1 JR Surfboards The Donny Stoker Yellow/Green Rail Fade";
         $price = "\$ 499.99";
-        $customDescription = "LOREM IPSUM";
+        $defaultDescription =
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " .
+            "ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " .
+            "nisi ut aliquip ex ea commodo consequat.";
+        $tabs = [
+            [
+                "titolo" => "Lorem",
+                "testo" =>  "Lorem ipsum dolor sit amet, consectetur adipiscing elit,".
+                            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " .
+                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            ],
+            [
+                "titolo" => "Ipsum",
+                "testo" =>  "Laoreet id donec ultrices tincidunt arcu non sodales. " .
+                            "Et malesuada fames ac turpis egestas integer. Egestas purus viverra accumsan in nisl. " .
+                            "A cras semper auctor neque vitae tempus quam. Nunc lobortis mattis aliquam faucibus purus in massa tempor. " .
+                            "Cras semper auctor neque vitae tempus quam. Nulla malesuada pellentesque elit eget. " .
+                            "Morbi leo urna molestie at elementum eu facilisis sed odio. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed. " .
+                            "Arcu risus quis varius quam. Ac tortor vitae purus faucibus ornare suspendisse. Ullamcorper morbi tincidunt ornare massa eget egestas " . 
+                            "purus viverra."
+            ],
+            [
+                "titolo" => "Dolor",
+                "testo" =>  "Risus ultricies tristique nulla aliquet. Tempus egestas sed sed risus. Imperdiet dui accumsan " .
+                            "sit amet nulla facilisi morbi tempus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. " .
+                            "Metus dictum at tempor commodo ullamcorper a lacus vestibulum. Egestas diam in arcu cursus. " . 
+                            "Sapien nec sagittis aliquam malesuada. Tempor id eu nisl nunc mi ipsum faucibus vitae. " .
+                            "Urna condimentum mattis pellentesque id nibh. Tempus imperdiet nulla malesuada pellentesque elit " .
+                            "eget gravida cum. Luctus accumsan tortor posuere ac. Quam vulputate dignissim suspendisse in." .
+                            "Odio morbi quis commodo odio. Ornare massa eget egestas purus viverra. Gravida rutrum quisque " .
+                            "non tellus. Dignissim cras tincidunt lobortis feugiat vivamus. Pharetra magna ac placerat vestibulum lectus."
+            ]
+        ];
     }
 @endphp
 
-@if(isset($product) || $customProduct)
+@if(isset($product) || $defaultProduct)
     <section class="container product-card">
         <div class="col product-images">
             @if(isset($image_url))
@@ -67,7 +100,7 @@
                     <ul class="tabs">
                         @foreach($tabs as $index => $tab)
                             <li id="{{ $tab['titolo'] }}" class="{{ $index === 0 ? 'active' : '' }} tab-title" onclick="showTabText('{{ $tab['titolo'] }}')">
-                                <a class="mx-4">{{ $tab['titolo'] }}</a>
+                                <a>{{ $tab['titolo'] }}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -97,7 +130,7 @@
                         }
                     </script>
                 @else
-                    <div>{{ isset($product) ? $product->get_short_description() : $customDescription}}</div>
+                    <div>{{ isset($product) ? $product->get_short_description() : $defaultDescription}}</div>
                 @endif
             </div>
             <div class="price-cta">
