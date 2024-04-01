@@ -2,10 +2,7 @@ import domReady from '@roots/sage/client/dom-ready';
 import $ from 'jquery';
 import 'bootstrap';
 import '@mdi/font/css/materialdesignicons.css'
-import '@fortawesome/fontawesome-free';
-//import Cookies from 'js-cookie';
-//import Swiper from 'swiper';
-//import 'jssocials';
+//import '@fortawesome/fontawesome-free';
 
 /**
  * Application entrypoint
@@ -28,29 +25,25 @@ domReady(async () => {
     handleScroll();
     $(window).on('scroll',handleScroll);
 
-    var clicked = false;
     $('i[id^="star-"]').on('mouseenter', function(){
         assignStarClasses($(this));
     });
 
-    /* $('i[id^="star-"]').on('click', function(){
+    $('i[id^="star-"]').on('mouseleave',function(){
+        $(this).nextAll('i[id^="star-"]').removeClass('mdi-star').addClass('mdi-star-outline');
+    });
+
+    $('i[id^="star-"]').on('click', function(){
         assignStarClasses($(this));
-        clicked = true;
-    }); */
+        $(this).prevAll('i[id^="star-"]').off('mouseleave');
+    });
 
     function assignStarClasses(star) {
         var starId = star.attr('id').split('-')[1];
-        console.log(starId);
         for (var i = 1; i <= starId; i++) {
-            $('#star-' + i).removeClass('mdi-star-outline').addClass('mdi-star clicked');
+            $('#star-' + i).removeClass('mdi-star-outline').addClass('mdi-star');
         }
     }
-
-    $('i[id^="star-"]').on('mouseleave',function(){
-        if(!clicked){
-            $('i[id^="star-"]').removeClass('mdi-star').addClass('mdi-star-outline');
-        }
-    });
 
     /* let hasVisited = document.cookie.includes('cookieName=Visited');
 

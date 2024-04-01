@@ -15,24 +15,27 @@
 
         .instagram-card{
             box-shadow: $card-shadow;
-            width: fit-content;
+            width: 100%;
 
             img{ width: 100%; }
 
             .follow-us{
                 @include flex-row;
                 align-items: center;
-                margin: 0 auto;
-
-                div,i,a{ margin: 10px; }
+                width: 100%;
+                padding: 15px;
 
                 div,i{
                     color: $main-color;
-                    font-size:x-large;
+                    font-size: 20px;
                     user-select: none;
                 }
 
-                div{ text-transform: uppercase; }
+                div{
+                    text-transform: uppercase;
+                    margin-left: 1rem;
+                    margin-right: auto;
+                }
 
                 a{
                     text-decoration: none;

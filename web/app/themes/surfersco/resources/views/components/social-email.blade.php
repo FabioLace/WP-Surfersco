@@ -37,7 +37,7 @@
                         <input type="checkbox" id="privacy-policy" name="privacy-policy"/>
                         <label for="privacy-policy">Accept the privacy policy</label>
                     </div>
-                    <button type="submit" color="#00b0ff" class="button-submit mx-auto text-white fw-bold">Submit</button>
+                    <button type="submit" color="#00b0ff" class="button-submit">Submit</button>
                 </form>
             </div>
         @endif

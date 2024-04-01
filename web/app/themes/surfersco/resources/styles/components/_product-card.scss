@@ -55,15 +55,12 @@
         }
 
         .prod-name-reviews{
-            .prod-name{
-                @include media-breakpoint-up(lg){ font-size: large; }
-            }
+            .prod-name{ font-size: 18px; }
 
             .reviews{
                 @include flex-align-center;
                 flex-direction: row;
                 margin-top: 10px;
-                align-content: center;
 
                 i{
                     color: #ffd119;
@@ -122,11 +119,13 @@
                 margin-bottom: 2em;
                 color: #808080;
                 @include media-breakpoint-up(md){ margin-top: 1em; }
-                @include media-breakpoint-up(lg){
-                    &.tab-content{
-                        max-height: 240px;
+
+                &.tab-content{
+                    @include media-breakpoint-up(lg){
+                        max-height: 220px;
                         overflow-y: auto;
                     }
+                    @include media-breakpoint-up(xl){ max-height: 240px; }
                 }
             }
         }
@@ -141,17 +140,12 @@
 
             .price{
                 margin-right: auto;
-                @include media-breakpoint-up(md){
-                    font-size: large;
-                    margin-right: 25px;
-                }
-                @include media-breakpoint-up(lg){
-                    font-size: larger;
-                    margin-right: 30px;
-                }
+                font-size: 18px;
+                @include media-breakpoint-up(md){ margin-right: 25px; }
+                @include media-breakpoint-up(lg){ margin-right: 30px; }
             }
 
-            button{ @include button-standard; }
+            .cta{ @include button-standard; }
         }
     }
 }
