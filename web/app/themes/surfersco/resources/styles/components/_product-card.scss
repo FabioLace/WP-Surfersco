@@ -59,7 +59,7 @@
                 @include media-breakpoint-up(lg){ font-size: large; }
             }
 
-            /* .reviews{
+            .reviews{
                 @include flex-row;
                 margin-top: 10px;
                 align-content: center;
@@ -71,7 +71,7 @@
                     color: #808080;
                     margin-left: 10px;
                 }
-            } */
+            }
         }
 
         .prod-description{
@@ -82,7 +82,6 @@
                 @include flex-row;
                 text-transform: uppercase;
                 font-weight: bold;
-                //font-size: small;
                 margin-bottom: 10px;
                 border-bottom: 1px solid #dddddd;
                 list-style-type: none;
@@ -116,8 +115,6 @@
 
             .text{
                 margin-bottom: 2em;
-                //text-align: justify;
-                //text-justify: inter-word; //GECKO
                 color: #808080;
                 @include media-breakpoint-up(md){ margin-top: 1em; }
                 @include media-breakpoint-up(lg){

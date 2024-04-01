@@ -31,9 +31,16 @@
                 flex-direction: column;
                 text-align: center;
 
-                .title{ text-transform: uppercase; }
+                .title{
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 25px;
+                }
 
-                .text{ font: italic large "Playfair Display", serif; }
+                .text{
+                    font: italic large "Playfair Display", serif;
+                    margin-bottom: 1rem;
+                }
 
                 a{ text-decoration: none; }
             }

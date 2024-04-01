@@ -83,16 +83,21 @@
                         <img src="{{  wp_get_attachment_image_url($galleryImageId) }}" />
                     @endforeach
                 @else
-                    <img src="@asset('images/thumb1.png')" />
-                    <img src="@asset('images/thumb2.png')" />
-                    <img src="@asset('images/thumb3.png')" />
-                    <img src="@asset('images/thumb4.png')" />
+                    @for ($i = 1; $i <= 4; $i++)
+                        <img src="@asset('images/thumb'.$i.'.png')" />
+                    @endfor
                 @endif
             </div>
         </div>
         <div class="col product-data">
             <div class="prod-name-reviews">
                 <div class="prod-name">{{ $productName }}</div>
+                <div class="reviews">
+                    @for ($j = 1; $j <= 5; $j++)
+                        <i id="star-{{ $j }}" class="mdi mdi-star-outline"></i>
+                    @endfor
+                    <a href="#">(51)</a>
+                </div>
             </div>
 
            <div class="prod-description">

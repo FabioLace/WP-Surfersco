@@ -28,6 +28,23 @@ domReady(async () => {
     handleScroll();
     window.addEventListener('scroll',handleScroll);
 
+    //STARS
+    /* fillStars(index) {
+        this.stars = this.stars.map((star, i) => i <= index);
+    },
+    emptyStars(){
+        if(this.selectedStar === -1){
+            this.stars = this.stars.map(() => false);
+        }
+    },
+    selectStar(index) {
+        this.selectedStar = index;
+    },
+    starIcon(star) {
+        return star ? 'mdi-star' : 'mdi-star-outline';
+    }, */
+
+
     /* let hasVisited = document.cookie.includes('cookieName=Visited');
 
     if(!hasVisited) {
