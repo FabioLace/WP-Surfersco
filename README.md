@@ -9,12 +9,22 @@
 This demo project is developed with [Bedrock](https://roots.io/bedrock/) and [Sage](https://roots.io/bedrock/), two powerful tools for creating advanced WordPress sites. Inspired by the PSD "Surfers Co." by Luis Costa (original available [here](https://shibbythemes.com/psd-freebies/surfersco-psd-template/?utm_source=dribbble)), you are free to use this project but don't take it seriously: it's just a demo.
 
 ## Plugins
-* Advanced Custom Fields Pro 6.2.5
-* Gravity Forms 2.7.19
-* WooCommerce 8.5.2
-* Yoast SEO 21.9.1
+* Advanced Custom Fields Pro
+* Gravity Forms
+* WooCommerce
+* Yoast SEO
 
- _At first, plugins are not activated and you have to activate them from CMS. As a remedy, I wrote fallback dummy stuffs so you'll see something at least._ 
+ _In order to use plugins, you have to activate them from CMS after the initial setup. Don't worry: I've written fallback dummy stuffs so you'll see something at least._
+ 
+ _Plugins are installed, updated or removed as `composer` packages from the root folder. You can find the packages at [Wordpress Packagist](https://wpackagist.org/)._ 
+
+## Dependencies
+* Material Design Icons
+* Popper
+* Bootstrap
+* jQuery
+
+_From the package.json of the surfersco theme._
 
 ## Guide
 * After you've cloned the repository, create your .env file and customize it as you please. Take a look to the .env.example as reference. You can find `WP_HOME='http://surfersco.test'`, that's because I use [Valet](https://laravel.com/docs/11.x/valet) as PHP development environment, not XAMPP or MAMPP. And no, I'm not using MacOS but a GNU/Linux distro.
@@ -31,6 +41,3 @@ npm install
 npm run build
 ```
 * Open the link of your WP_HOME and follow the classic Worpress config procedure.
-
-## FYI
-* On this project, plugins are installed, updated or removed as `composer` packages from the root folder. You can find the packages at [Wordpress Packagist](https://wpackagist.org/)
