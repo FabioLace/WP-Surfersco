@@ -12,38 +12,45 @@ import '@fortawesome/fontawesome-free';
  */
 domReady(async () => {
 
-    let header = document.querySelector('header');
+    let header = $('header');
 
     function handleScroll() {
-        const scrollTop = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.body.clientHeight;
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const documentHeight = $(document).height();
         const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-        if (scrollPercentage > 1 && !header.classList.contains('scrolled')) {
-            header.classList.add('scrolled');
-        } else if(scrollPercentage === 0  && header.classList.contains('scrolled')){
-            header.classList.remove('scrolled');
+        if (scrollPercentage > 1 && !header.hasClass('scrolled')) {
+            header.addClass('scrolled');
+        } else if(scrollPercentage === 0  && header.hasClass('scrolled')){
+            header.removeClass('scrolled');
         }
     }
     handleScroll();
-    window.addEventListener('scroll',handleScroll);
+    $(window).on('scroll',handleScroll);
 
-    //STARS
-    /* fillStars(index) {
-        this.stars = this.stars.map((star, i) => i <= index);
-    },
-    emptyStars(){
-        if(this.selectedStar === -1){
-            this.stars = this.stars.map(() => false);
+    var clicked = false;
+    $('i[id^="star-"]').on('mouseenter', function(){
+        assignStarClasses($(this));
+    });
+
+    /* $('i[id^="star-"]').on('click', function(){
+        assignStarClasses($(this));
+        clicked = true;
+    }); */
+
+    function assignStarClasses(star) {
+        var starId = star.attr('id').split('-')[1];
+        console.log(starId);
+        for (var i = 1; i <= starId; i++) {
+            $('#star-' + i).removeClass('mdi-star-outline').addClass('mdi-star clicked');
         }
-    },
-    selectStar(index) {
-        this.selectedStar = index;
-    },
-    starIcon(star) {
-        return star ? 'mdi-star' : 'mdi-star-outline';
-    }, */
+    }
 
+    $('i[id^="star-"]').on('mouseleave',function(){
+        if(!clicked){
+            $('i[id^="star-"]').removeClass('mdi-star').addClass('mdi-star-outline');
+        }
+    });
 
     /* let hasVisited = document.cookie.includes('cookieName=Visited');
 

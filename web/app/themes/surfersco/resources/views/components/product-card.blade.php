@@ -93,8 +93,8 @@
             <div class="prod-name-reviews">
                 <div class="prod-name">{{ $productName }}</div>
                 <div class="reviews">
-                    @for ($j = 1; $j <= 5; $j++)
-                        <i id="star-{{ $j }}" class="mdi mdi-star-outline"></i>
+                    @for ($j = 0; $j <= 4; $j++)
+                        <i id="star-{{ $j+1 }}" class="mdi mdi-star-outline"></i>
                     @endfor
                     <a href="#">(51)</a>
                 </div>
